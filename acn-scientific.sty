@@ -1,0 +1,58 @@
+
+%% LaTeX style sheet for anything to do with science
+%% 2015-02-31
+%% 2015-03-07 Adding formula environment
+%% 2016-05-29 Adding CC-BYNCSA command
+%% 2016-06-22 Adding booktabs
+%% 2017-11-13 Adding axis style
+%%
+%% Andrew C. Norman
+%% Radley College
+%% Abingdon, Oxon. OX14 2HR
+
+\ProvidesPackage{acn-scientific}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\usepackage{siunitx}
+
+\usepackage{booktabs} % publication-quality tables
+
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric}
+
+\usetikzlibrary{arrows}%for what follows
+\tikzstyle{displacement}=[thick, |->|, >=angle 60]
+\tikzstyle{velocity}=[thick, ->, >=angle 60]
+\tikzstyle{acceleration}=[thick, ->>, >=angle 60]
+\tikzstyle{acceleration}=[thick, ->>, >=angle 60]
+\tikzstyle{momentum}=[very thick, ->, >=latex']
+\tikzstyle{force}=[very thick, ->, >=triangle 60]
+\tikzstyle{lightray}=[postaction={decorate,decoration={markings,mark=at position .55 with {\arrow{>}}}}]
+\tikzstyle{axis}=[thick, ->, >=angle 60]
+
+%get bold vectors rather than (default) arrows
+\let\oldhat\hat
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\renewcommand{\hat}[1]{\oldhat{\mathbf{#1}}}
+%http://www.tapdancinggoats.com/bold-vectors-in-latex.htm
+
+\newsavebox{\fmbox}
+\newenvironment{formula}[1]
+{\begin{lrbox}{\fmbox}\noindent\begin{minipage}[c]{0.3\textwidth}
+  \[
+    #1
+  \]
+  \end{minipage}
+  \begin{minipage}[c]{0.6\textwidth}}
+{\end{minipage}\end{lrbox}\fbox{\usebox{\fmbox}}}
+
+\newcommand{\quantdef}[4]{\ensuremath{#1} is \emph{#2}, unit: \textbf{#3} (\si{#4})\par}
+
+
+\newcommand{\ud}{\ensuremath{\,\mathrm{d}}}
+\newcommand{\dd}{\ensuremath{\mathrm{d}}}
+\providecommand{\e}[1]{\ensuremath{\times 10^{#1}}} %worth it anymore?
