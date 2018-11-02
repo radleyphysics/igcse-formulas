@@ -1,0 +1,173 @@
+
+\documentclass[11pt,a4paper]{article}
+\usepackage{acn-scientific}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm,a4paper]{geometry}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{paracol} % for dual column
+\usepackage[makeroom]{cancel}
+\usetikzlibrary{decorations.pathreplacing,
+  decorations.markings,
+  decorations.pathmorphing}
+\usetikzlibrary{arrows,shapes}
+
+\newcommand{\quantlabel}[8][]{\node[text width=#8,fill=#6!40] (#5) at (#7) {the \emph{#2} \par #1 \par unit: \textbf{#3} (\si{#4})};}
+\newcommand{\numlabel}[4]{\node[text width=#4,fill=lightgray!40] (#2) at (#3) {#1};}
+
+\setcounter{secnumdepth}{0}
+\setlength{\fboxsep}{15pt}
+
+\title{Fifth back of logbook formulas}
+\author{\textsc{Radley College Physics Department}}
+\date{}
+
+\begin{document}
+
+%\maketitle
+
+\thispagestyle{empty}
+
+\hfill
+
+\tikzstyle{every picture}+=[remember picture]
+%  \tikzstyle{na} = [baseline]
+
+\columnratio{0.25}
+
+\noindent\begin{paracol}{3}
+Nuclear
+\end{paracol}
+
+\hrulefill
+
+\vspace*{1em}
+
+\noindent\begin{paracol}{4}
+Waves
+\switchcolumn 
+\begin{center}
+$v=f\lambda$
+\end{center}
+\switchcolumn
+\begin{center}
+$n=\dfrac{\sin\left(\text{big}\right)}{\sin\left(\text{small}\right)}$
+\end{center}
+\switchcolumn
+\begin{center}
+$\sin c=\dfrac{1}{n}$
+\end{center}
+\end{paracol}
+
+\vspace*{1em}
+
+\hrulefill
+
+\vspace*{1em}
+
+\noindent\begin{paracol}{3}
+Electricity
+\switchcolumn 
+\begin{center}
+$Q = It$
+\end{center}
+\switchcolumn
+\begin{center}
+$V = IR$
+\end{center}
+\end{paracol}
+
+\noindent\begin{paracol}{3}
+
+\switchcolumn 
+\[P=IV\]
+\switchcolumn
+\[E=QV\]
+\end{paracol}
+
+\vspace*{1em}
+
+\hrulefill
+
+\vspace*{1em}
+
+\noindent\begin{paracol}{3}
+F/M/E 
+\switchcolumn 
+\begin{center}
+$v = \dfrac{d}{t}$
+\end{center}
+\switchcolumn
+\begin{center}
+$a = \dfrac{\Delta v}{t}$
+\end{center}
+\end{paracol}
+
+\vspace*{1em}
+
+\noindent\begin{paracol}{4}
+
+\switchcolumn 
+\[F = ma\]
+\switchcolumn
+\[W=mg\]
+\end{paracol}
+
+\vspace*{1em}
+
+\noindent\begin{paracol}{4}
+
+\switchcolumn 
+\[W = Fd\]
+\switchcolumn
+\[\text{GPE}=mgh\]
+\switchcolumn
+\[\text{KE}=\frac{1}{2}mv^{2}\]
+\end{paracol}
+
+\vspace*{1em}
+
+\noindent\begin{paracol}{2}
+
+\switchcolumn 
+\[\text{efficiency} = \frac{\text{useful energy output}}{\text{total energy input}}\]
+\end{paracol}
+
+
+\vspace*{1em}
+
+\hrulefill
+
+\vspace*{1em}
+
+\noindent\begin{paracol}{4}
+EMag
+\end{paracol}
+
+\vspace*{1em}
+
+\hrulefill
+
+\vspace*{1em}
+
+\noindent\begin{paracol}{4}
+SLG
+\switchcolumn 
+\begin{center}
+$\rho = \dfrac{m}{V}$
+\end{center}
+\switchcolumn
+\begin{center}
+$p=\dfrac{F}{A}$
+\end{center}
+\switchcolumn
+\begin{center}
+$p=\rho g h$
+\end{center}
+\end{paracol}
+
+\vfill
+
+
+\end{document}
