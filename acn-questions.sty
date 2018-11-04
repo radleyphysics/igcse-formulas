@@ -1,0 +1,59 @@
+\ProvidesPackage{acn-questions}
+%DO NOT MODIFY
+%MAIN COPY IN ACN-16G-SCH/acn-schoolfiles/acn-latexstyles/
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\usepackage[left=2cm,top=1.5cm,hcentering,a4paper]{geometry}
+
+\usepackage{color}
+\providecommand{\bl}[1]{\textcolor[rgb]{1,1,1} {#1}}
+
+\usepackage[pdfusetitle,pdfauthor={A.C. Norman},pdfcreator={LaTeX}]{hyperref}
+
+%
+% Creative commons license statement
+%
+\providecommand{\ccbyncsa}{\thispagestyle{empty} \fontsize{12pt}{14pt}\selectfont \noindent \includegraphics[width=0.95cm]{cc.pdf}\hspace{0.5em}\includegraphics[width=0.95cm]{by.pdf}\hspace{0.5em}\includegraphics[width=0.95cm]{nc.pdf}\hspace{0.5em}\includegraphics[width=0.95cm]{sa.pdf}\hspace{0.5em}\begin{minipage}[b]{13cm} \renewcommand{\sfdefault}{phv} \sffamily Except where otherwise noted, this work is licensed under
+
+\smallskip
+
+\renewcommand\UrlFont{\sffamily\bfseries} \url{http://creativecommons.org/licenses/by-nc-sa/4.0/}\end{minipage}}
+
+%
+% (optional) answers...
+%
+\usepackage{comment}
+\newif\ifshowanswers
+\showanswersfalse
+\def\answerbegin{\par\vspace*{-2\lineskip}}%\centerline{\hrulefill}\small}
+\def\answerend{}%\par\centerline{\hrulefill}}
+\AtBeginDocument{
+\ifshowanswers
+  \newenvironment{answer}{\begingroup\answerbegin}{\answerend\endgroup}
+\else
+  \excludecomment{answer}
+\fi
+}
+
+%
+% Warm-up, Regular, Extension Problems (with remembered numbering)
+%
+\newcounter{saveenumi}
+\setcounter{saveenumi}{0}
+\setcounter{secnumdepth}{0}
+\newenvironment{warmup}{\section{Warm-up problems}\begin{enumerate}\setcounter{enumi}{\thesaveenumi}}{\setcounter{saveenumi}{\theenumi}\end{enumerate}}
+\newenvironment{regular}{\section{Regular problems}\begin{enumerate}\setcounter{enumi}{\thesaveenumi}}{\setcounter{saveenumi}{\theenumi}\end{enumerate}}
+\newenvironment{extension}{\section{Extension problems}\begin{enumerate}\setcounter{enumi}{\thesaveenumi}}{\setcounter{saveenumi}{\theenumi}\end{enumerate}}
+
+%
+% For "hints" at the end of questions...
+%
+\def\shorthint#1{$\big[${\em #1}$\big]$}
+%
+\long\def\longhint#1{\vskip-20pt$$\left[\begin{minipage}{0.97\linewidth}
+   $\strut$\vskip-12pt\em #1\vskip-12pt$\strut$
+ \end{minipage}\:\right]$$}
+
